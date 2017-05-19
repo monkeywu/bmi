@@ -51,3 +51,4 @@ function BMI() {
 }
     send.addEventListener('click', BMI, false)
     
+

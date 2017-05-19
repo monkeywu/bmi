@@ -63,7 +63,7 @@
 }
 .content {
   text-align: center;
-  padding: 50px 0;
+  padding: 75px 0;
   background-color: rgba(128,128,128,0.12);
 }
 .content h1 {
@@ -94,6 +94,13 @@
 }
 .content ul li .fw {
   margin-left: 50px;
+}
+.content ul li a {
+  margin-left: 30px;
+  color: #000;
+}
+.content ul li a:hover {
+  text-decoration: none;
 }
 #footer {
   background-color: #ffd366;
