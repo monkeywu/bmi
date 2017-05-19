@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>BMI Caculator</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="icon">
+						<img src="image/BMICLogo.png" alt="logo">
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="input">
+						<span>身高cm</span>
+						<input type="text" class="height" placeholder="請輸入身高">
+					</div>
+
+					<div class="input">
+						<span>體重kg</span>
+						<input type="text" class="weight" placeholder="請輸入體重">
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="result">
+						<input type="button" class="send" value="看結果">
+						<div class="icon-loop">
+							<img src="image/icons_loop.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="container">
+			<h1>BMI紀錄</h1>
+			<ul class="list"></ul>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="footer-logo">
+			<img src="image/BMICLogo.png"" alt="">
+		</div>
+	</div>
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
