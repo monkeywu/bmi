@@ -1,5 +1,10 @@
 var send = document.querySelector('.send');
 var loop = document.querySelector('.icon-loop');
+var list = document.querySelector('.list');
+var dt = new Date();
+var date = dt.getDate();
+var month = dt.getMonth()+1;
+var year = dt.getFullYear();
 var data = JSON.parse(localStorage.getItem('listData')) || [];
 function BMI() {
     // 取得身高值
@@ -17,11 +22,6 @@ function BMI() {
         //將結果輸出至content
         var bmi = w / ((h * h)/10000);
         bmi = bmi.toFixed(2);
-        var list = document.querySelector('.list');
-        var dt = new Date();
-        var date = dt.getDate();
-        var month = dt.getMonth()+1;
-        var year = dt.getFullYear();
         var content = '';
         var addli = function(a,b,c,d){
             send.value = bmi+'BMI';
@@ -45,12 +45,22 @@ function BMI() {
         } 
     }   
     list.innerHTML += content;
+    var todo = {
+        content
+    };
+    data.push(todo);
+    localStorage.setItem('listData', JSON.stringify(data));
 }
     send.addEventListener('click', BMI, false)
-    
-
-
-    
+    function update(item){
+        var len = item.length;
+        for (i=0;len>i;i++){
+            list.innerHTML += data[i].content;
+        }
+    }  
+    if(data !== []){
+        update(data);
+    }
     
 
 
