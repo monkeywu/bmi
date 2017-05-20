@@ -45,12 +45,6 @@ function BMI() {
         } 
     }   
     list.innerHTML += content;
-    var todo = {
-        abc:content
-    };
-    data.push(todo);
-    console.log(data);
-    localStorage.setItem('listData', JSON.stringify(data));
 }
     send.addEventListener('click', BMI, false)
     
