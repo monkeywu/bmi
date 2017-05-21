@@ -54,8 +54,8 @@
 }
 .col-sm-4 .result .icon-loop {
   position: absolute;
-  bottom: 15%;
-  left: 29.5%;
+  bottom: 20px;
+  left: 95px;
   width: 23px;
   border-radius: 100%;
   border: 1px solid;
@@ -115,4 +115,37 @@
 #footer .footer-logo img {
   width: 100%;
   height: auto;
+}
+@media screen and (max-width: 1000px) {
+  .content ul li {
+    font-size: 16px;
+  }
+  .content ul li span {
+    margin-right: 20px;
+  }
+  .content ul li .fw {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .col-sm-4 {
+    margin-bottom: 50px;
+  }
+  .col-sm-4 .input span {
+    width: 100%;
+  }
+  .col-sm-4 .send {
+    margin: 0 auto;
+  }
+  .col-sm-4 .result .icon-loop {
+    display: none;
+  }
+}
+@media screen and (max-width: 770px) {
+  .content ul li span {
+    margin: 0;
+  }
+  .content ul li p {
+    display: block;
+  }
 }
