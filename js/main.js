@@ -5,19 +5,18 @@ var dt = new Date();
 var date = dt.getDate();
 var month = dt.getMonth()+1;
 var year = dt.getFullYear();
+
 var data = JSON.parse(localStorage.getItem('listData')) || [];
 function BMI() {
     // 取得身高值
-    var h = $('.height').val();
+    var h = document.querySelector('.height').value;
     // 取得體重值
-    var w = $('.weight').val();
+    var w = document.querySelector('.weight').value;
     // 計算 BMI
-    if(isNaN(h)) {
-        alert('身高欄位需填入阿拉伯數字！');
-    } else if (isNaN(w)){
-        alert('體重欄位需填入阿拉伯數字！');
-    } else if (h == '' || w == ''){
+    if(h == '' || w == ''){
         alert('欄位不可空白！');
+    } else if(h <0 || w <0){
+        alert('數值不可為負數！');
     } else {
         //將結果輸出至content
         var bmi = w / ((h * h)/10000);
@@ -42,28 +41,23 @@ function BMI() {
              addli('<li class="m-heavy"><span>中度肥胖</span><p>BMI</p>'+bmi+'<p class="fw">weight</p>'+w+'KG'+'<p class="fw">height</p>'+h+'CM'+'<p class="fw">'+month+'-'+date+'-'+year+'</p></li>','#FF6C02','5px solid #FF6C02','#FF6C02');
         } else {
              addli('<li class="s-heavy"><span>重度肥胖</span><p>BMI</p>'+bmi+'<p class="fw">weight</p>'+w+'KG'+'<p class="fw">height</p>'+h+'CM'+'<p class="fw">'+month+'-'+date+'-'+year+'</p></li>','#FF1200','5px solid #FF1200','#FF1200');
-        } 
+        }
     }   
-    list.innerHTML += content;
-    var todo = {
-        content
-    };
-    data.push(todo);
-    localStorage.setItem('listData', JSON.stringify(data));
+    if(content !== undefined){
+        list.innerHTML += content;
+        var todo = {content};
+        data.push(todo);
+        localStorage.setItem('listData', JSON.stringify(data));
+    }
 }
     send.addEventListener('click', BMI, false)
     function update(item){
         var len = item.length;
         for (i=0;len>i;i++){
             list.innerHTML += data[i].content;
-        }
-    }  
-    if(data !== []){
+            localStorage.setItem('listData', JSON.stringify(data));
+            }
+    }
+    if(data !== [] ){
         update(data);
     }
-    
-
-
-
-
-
