@@ -43,14 +43,13 @@ function BMI() {
              addli('<li class="s-heavy"><span>重度肥胖</span><p>BMI</p>'+bmi+'<p class="fw">weight</p>'+w+'KG'+'<p class="fw">height</p>'+h+'CM'+'<p class="fw">'+month+'-'+date+'-'+year+'</p></li>','#FF1200','5px solid #FF1200','#FF1200');
         }
     }   
-    if(content !== undefined){
         list.innerHTML += content;
         var todo = {content};
         data.push(todo);
         localStorage.setItem('listData', JSON.stringify(data));
-    }
 }
     send.addEventListener('click', BMI, false)
+
     function update(item){
         var len = item.length;
         for (i=0;len>i;i++){
